@@ -1,4 +1,4 @@
-package com.smarthelmet.app.smart_helmet
+package com.smarthelmet.app
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.smarthelmet.app.smart_helmet">
+    package="com.smarthelmet.app">
    <application
         android:label="smart_helmet"
         android:name="${applicationName}"
