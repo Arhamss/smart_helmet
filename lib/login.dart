@@ -24,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0XFFd8e8e8),
+      backgroundColor: const Color(0XFFd8e8e8),
       body: Stack(
         alignment: Alignment.center,
         children: [
@@ -36,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
               width: 200,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Color(0xFF08f4dc).withOpacity(0.35),
+                color: const Color(0xFF08f4dc).withOpacity(0.35),
                 backgroundBlendMode: BlendMode.srcOver,
               ),
             ),
@@ -49,7 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
               width: 200,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Color(0xFF08f4dc).withOpacity(0.35),
+                color: const Color(0xFF08f4dc).withOpacity(0.35),
                 backgroundBlendMode: BlendMode.srcOver,
               ),
             ),
@@ -60,10 +60,10 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(32),
-                color: Color(0xFF08f4dc),
+                color: const Color(0xFF08f4dc),
               ),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(64, 16, 64, 16),
+              child: const Padding(
+                padding: EdgeInsets.fromLTRB(64, 16, 64, 16),
                 child: Text(
                   "Login",
                   style: TextStyle(
@@ -84,7 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
               width: 400,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(32),
-                color: Color(0xFF08f4dc),
+                color: const Color(0xFF08f4dc),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -97,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         controller: usernameController,
                         textAlign: TextAlign.left,
                         cursorColor: Colors.black,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 24,
                         ),
                         decoration: InputDecoration(
@@ -108,7 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             fillColor: Colors.white,
                             hintText: "Username",
-                            hintStyle: TextStyle(
+                            hintStyle: const TextStyle(
                               color: Colors.black,
                               fontSize: 24,
                             )),
@@ -124,7 +124,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         controller: passwordController,
                         textAlign: TextAlign.left,
                         cursorColor: Colors.black,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 24,
                         ),
                         decoration: InputDecoration(
@@ -143,12 +143,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                 _obscureText == true
                                     ? Icons.visibility_off_outlined
                                     : Icons.visibility,
-                                color: Color(0xFF08f4dc),
+                                color: const Color(0xFF08f4dc),
                               ),
                             ),
                             fillColor: Colors.white,
                             hintText: "Password",
-                            hintStyle: TextStyle(
+                            hintStyle: const TextStyle(
                               color: Colors.black,
                               fontSize: 24,
                             )),
@@ -163,7 +163,7 @@ class _LoginScreenState extends State<LoginScreen> {
             bottom: 250,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF08f4dc),
+                backgroundColor: const Color(0xFF08f4dc),
                 elevation: 0,
                 padding: EdgeInsets.zero,
                 shape: RoundedRectangleBorder(
@@ -171,8 +171,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               onPressed: () {},
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(40, 16, 40, 16),
+              child: const Padding(
+                padding: EdgeInsets.fromLTRB(40, 16, 40, 16),
                 child: Text(
                   "Login",
                   style: TextStyle(
@@ -191,7 +191,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   TextSpan(
                     text: "Don't have an account?",
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.black,
                     ),
                     recognizer: TapGestureRecognizer()
@@ -201,7 +201,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   TextSpan(
                     text: ' Sign Up',
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Color(0xFF08f4dc),
                       decoration: TextDecoration.underline,
                     ),

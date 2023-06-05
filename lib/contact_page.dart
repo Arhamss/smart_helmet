@@ -13,7 +13,7 @@ class _ContactScreenState extends State<ContactScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0XFFd8e8e8),
+      backgroundColor: const Color(0XFFd8e8e8),
       body: Stack(
         alignment: Alignment.center,
         children: [
@@ -25,7 +25,7 @@ class _ContactScreenState extends State<ContactScreen> {
               width: 200,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Color(0xFF08f4dc).withOpacity(0.35),
+                color: const Color(0xFF08f4dc).withOpacity(0.35),
                 backgroundBlendMode: BlendMode.srcOver,
               ),
             ),
@@ -38,7 +38,7 @@ class _ContactScreenState extends State<ContactScreen> {
               width: 200,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Color(0xFF08f4dc).withOpacity(0.35),
+                color: const Color(0xFF08f4dc).withOpacity(0.35),
                 backgroundBlendMode: BlendMode.srcOver,
               ),
             ),
@@ -48,7 +48,7 @@ class _ContactScreenState extends State<ContactScreen> {
             child: Container(
               width: 430,
               height: MediaQuery.of(context).size.height * 0.77,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(50),
@@ -76,7 +76,7 @@ class _ContactScreenState extends State<ContactScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     SizedBox(
@@ -93,7 +93,7 @@ class _ContactScreenState extends State<ContactScreen> {
                         onPressed: () {
                           Navigator.pushNamed(context, WelcomePage.id);
                         },
-                        child: Padding(
+                        child: const Padding(
                           padding: EdgeInsets.fromLTRB(16, 8, 16, 8),
                           child: Text(
                             "ADD NEW",

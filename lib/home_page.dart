@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0XFFd8e8e8),
+      backgroundColor: const Color(0XFFd8e8e8),
       body: Stack(
         alignment: Alignment.center,
         children: [
@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
               width: 200,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Color(0xFF08f4dc).withOpacity(0.35),
+                color: const Color(0xFF08f4dc).withOpacity(0.35),
                 backgroundBlendMode: BlendMode.srcOver,
               ),
             ),
@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
               width: 200,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Color(0xFF08f4dc).withOpacity(0.35),
+                color: const Color(0xFF08f4dc).withOpacity(0.35),
                 backgroundBlendMode: BlendMode.srcOver,
               ),
             ),
@@ -56,8 +56,8 @@ class _HomePageState extends State<HomePage> {
             top: 410,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF08f4dc),
-                foregroundColor: Color(0xFF08f4dc),
+                backgroundColor: const Color(0xFF08f4dc),
+                foregroundColor: const Color(0xFF08f4dc),
                 elevation: 0,
                 padding: EdgeInsets.zero,
                 shape: RoundedRectangleBorder(
@@ -67,8 +67,8 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 Navigator.pushNamed(context, WelcomePage.id);
               },
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(64, 16, 64, 16),
+              child: const Padding(
+                padding: EdgeInsets.fromLTRB(64, 16, 64, 16),
                 child: Text(
                   "Connect",
                   style: TextStyle(
@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(32),
-                color: Color(0xFF08f4dc),
+                color: const Color(0xFF08f4dc),
               ),
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(16, 24, 16, 24),
@@ -101,8 +101,8 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () {
                     Navigator.pushNamed(context, WelcomePage.id);
                   },
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(64, 16, 64, 16),
+                  child: const Padding(
+                    padding: EdgeInsets.fromLTRB(64, 16, 64, 16),
                     child: Text(
                       "Import Contacts",
                       style: TextStyle(
@@ -123,7 +123,7 @@ class _HomePageState extends State<HomePage> {
               width: 300,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Color(0xFF08f4dc).withOpacity(0.35),
+                color: const Color(0xFF08f4dc).withOpacity(0.35),
                 backgroundBlendMode: BlendMode.srcOver,
               ),
             ),

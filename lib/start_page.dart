@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:smart_helmet/welcome.dart';
@@ -15,7 +14,7 @@ class _StartPageState extends State<StartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0XFFd8e8e8),
+      backgroundColor: const Color(0XFFd8e8e8),
       body: Stack(
         alignment: Alignment.center,
         children: [
@@ -27,7 +26,7 @@ class _StartPageState extends State<StartPage> {
               width: 200,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Color(0xFF08f4dc).withOpacity(0.35),
+                color: const Color(0xFF08f4dc).withOpacity(0.35),
                 backgroundBlendMode: BlendMode.srcOver,
               ),
             ),
@@ -40,12 +39,12 @@ class _StartPageState extends State<StartPage> {
               width: 200,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Color(0xFF08f4dc).withOpacity(0.35),
+                color: const Color(0xFF08f4dc).withOpacity(0.35),
                 backgroundBlendMode: BlendMode.srcOver,
               ),
             ),
           ),
-          Positioned(
+          const Positioned(
               top: 250,
               child: Text(
                 "SMART HELMET",
@@ -67,8 +66,8 @@ class _StartPageState extends State<StartPage> {
             left: 100,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF08f4dc),
-                foregroundColor: Color(0xFF08f4dc),
+                backgroundColor: const Color(0xFF08f4dc),
+                foregroundColor: const Color(0xFF08f4dc),
                 elevation: 0,
                 padding: EdgeInsets.zero,
                 shape: RoundedRectangleBorder(
@@ -78,8 +77,8 @@ class _StartPageState extends State<StartPage> {
               onPressed: () {
                 Navigator.pushNamed(context, WelcomePage.id);
               },
-              child: Padding(
-                padding: const EdgeInsets.all(32.0),
+              child: const Padding(
+                padding: EdgeInsets.all(32.0),
                 child: Text(
                   "Get Started",
                   style: TextStyle(
@@ -98,7 +97,7 @@ class _StartPageState extends State<StartPage> {
               width: 300,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Color(0xFF08f4dc).withOpacity(0.35),
+                color: const Color(0xFF08f4dc).withOpacity(0.35),
                 backgroundBlendMode: BlendMode.srcOver,
               ),
             ),

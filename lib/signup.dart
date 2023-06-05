@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +24,7 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0XFFd8e8e8),
+      backgroundColor: const Color(0XFFd8e8e8),
       body: Stack(
         alignment: Alignment.center,
         children: [
@@ -37,7 +36,7 @@ class _SignUpPageState extends State<SignUpPage> {
               width: 200,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Color(0xFF08f4dc).withOpacity(0.35),
+                color: const Color(0xFF08f4dc).withOpacity(0.35),
                 backgroundBlendMode: BlendMode.srcOver,
               ),
             ),
@@ -50,7 +49,7 @@ class _SignUpPageState extends State<SignUpPage> {
               width: 200,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Color(0xFF08f4dc).withOpacity(0.35),
+                color: const Color(0xFF08f4dc).withOpacity(0.35),
                 backgroundBlendMode: BlendMode.srcOver,
               ),
             ),
@@ -61,10 +60,10 @@ class _SignUpPageState extends State<SignUpPage> {
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(32),
-                color: Color(0xFF08f4dc),
+                color: const Color(0xFF08f4dc),
               ),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(64, 16, 64, 16),
+              child: const Padding(
+                padding: EdgeInsets.fromLTRB(64, 16, 64, 16),
                 child: Text(
                   "Sign Up",
                   style: TextStyle(
@@ -85,7 +84,7 @@ class _SignUpPageState extends State<SignUpPage> {
               width: 400,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(32),
-                color: Color(0xFF08f4dc),
+                color: const Color(0xFF08f4dc),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -98,7 +97,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         controller: usernameController,
                         textAlign: TextAlign.left,
                         cursorColor: Colors.black,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 24,
                         ),
                         decoration: InputDecoration(
@@ -109,7 +108,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             ),
                             fillColor: Colors.white,
                             hintText: "Username",
-                            hintStyle: TextStyle(
+                            hintStyle: const TextStyle(
                               color: Colors.black,
                               fontSize: 24,
                             )),
@@ -121,7 +120,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         controller: emailController,
                         textAlign: TextAlign.left,
                         cursorColor: Colors.black,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 24,
                         ),
                         decoration: InputDecoration(
@@ -132,7 +131,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             ),
                             fillColor: Colors.white,
                             hintText: "Email",
-                            hintStyle: TextStyle(
+                            hintStyle: const TextStyle(
                               color: Colors.black,
                               fontSize: 24,
                             )),
@@ -148,7 +147,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         controller: passwordController,
                         textAlign: TextAlign.left,
                         cursorColor: Colors.black,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 24,
                         ),
                         decoration: InputDecoration(
@@ -167,12 +166,12 @@ class _SignUpPageState extends State<SignUpPage> {
                                 _obscureText == true
                                     ? Icons.visibility_off_outlined
                                     : Icons.visibility,
-                                color: Color(0xFF08f4dc),
+                                color: const Color(0xFF08f4dc),
                               ),
                             ),
                             fillColor: Colors.white,
                             hintText: "Password",
-                            hintStyle: TextStyle(
+                            hintStyle: const TextStyle(
                               color: Colors.black,
                               fontSize: 24,
                             )),
@@ -187,7 +186,7 @@ class _SignUpPageState extends State<SignUpPage> {
             bottom: 150,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF08f4dc),
+                backgroundColor: const Color(0xFF08f4dc),
                 elevation: 0,
                 padding: EdgeInsets.zero,
                 shape: RoundedRectangleBorder(
@@ -195,8 +194,8 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
               ),
               onPressed: () {},
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(40, 16, 40, 16),
+              child: const Padding(
+                padding: EdgeInsets.fromLTRB(40, 16, 40, 16),
                 child: Text(
                   "Sign Up",
                   style: TextStyle(
@@ -215,7 +214,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 children: [
                   TextSpan(
                     text: "Already have an account?",
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.black,
                     ),
                     recognizer: TapGestureRecognizer()
@@ -225,7 +224,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                   TextSpan(
                     text: ' Login',
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Color(0xFF08f4dc),
                       decoration: TextDecoration.underline,
                     ),
