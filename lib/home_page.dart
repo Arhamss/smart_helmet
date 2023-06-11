@@ -1,6 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:smart_helmet/start_page.dart';
+import 'package:smart_helmet/start_ride.dart';
 import 'package:smart_helmet/welcome.dart';
+
+import 'contact_page.dart';
 
 class HomePage extends StatefulWidget {
   static const String id = 'HomePage';
@@ -11,9 +17,29 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool connected = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.logout,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              FirebaseAuth.instance.signOut();
+              Navigator.pop(context);
+              Navigator.pushNamed(context, StartPage.id);
+            },
+          ),
+        ],
+      ),
+      extendBodyBehindAppBar: true,
       backgroundColor: const Color(0XFFd8e8e8),
       body: Stack(
         alignment: Alignment.center,
@@ -45,9 +71,22 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Positioned(
-            top: 200,
+            bottom: -100,
+            right: -50,
+            child: Container(
+              height: 300,
+              width: 300,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: const Color(0xFF08f4dc).withOpacity(0.35),
+                backgroundBlendMode: BlendMode.srcOver,
+              ),
+            ),
+          ),
+          Positioned(
+            top: 180,
             child: SvgPicture.asset(
-              "svgs/person_cycling.svg",
+              "svgs/helmet.svg",
               height: 200,
               width: 200,
             ),
@@ -64,14 +103,30 @@ class _HomePageState extends State<HomePage> {
                   borderRadius: BorderRadius.circular(48),
                 ),
               ),
-              onPressed: () {
-                Navigator.pushNamed(context, WelcomePage.id);
+              onPressed: () async {
+                showDialog(
+                  context: context,
+                  barrierDismissible: false,
+                  builder: (context) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  },
+                );
+
+                await Future.delayed(const Duration(seconds: 2));
+
+                setState(() {
+                  connected = !connected;
+                });
+
+                Navigator.pop(context);
               },
-              child: const Padding(
-                padding: EdgeInsets.fromLTRB(64, 16, 64, 16),
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(64, 16, 64, 16),
                 child: Text(
-                  "Connect",
-                  style: TextStyle(
+                  connected ? "Connected" : "Connect",
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 24,
                   ),
@@ -86,45 +141,64 @@ class _HomePageState extends State<HomePage> {
                 borderRadius: BorderRadius.circular(32),
                 color: const Color(0xFF08f4dc),
               ),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(16, 24, 16, 24),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.white,
-                    elevation: 0,
-                    padding: EdgeInsets.zero,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(48),
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.pushNamed(context, WelcomePage.id);
-                  },
-                  child: const Padding(
-                    padding: EdgeInsets.fromLTRB(64, 16, 64, 16),
-                    child: Text(
-                      "Import Contacts",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 24,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 24, 16, 24),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        foregroundColor: Colors.white,
+                        elevation: 0,
+                        padding: EdgeInsets.zero,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(48),
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.pushNamed(context, ContactScreen.id);
+                      },
+                      child: const Padding(
+                        padding: EdgeInsets.fromLTRB(64, 16, 64, 16),
+                        child: Text(
+                          "Import Contacts",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 24,
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: -100,
-            right: -50,
-            child: Container(
-              height: 300,
-              width: 300,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: const Color(0xFF08f4dc).withOpacity(0.35),
-                backgroundBlendMode: BlendMode.srcOver,
+                  if (connected)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 24),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          foregroundColor: Colors.white,
+                          elevation: 0,
+                          padding: EdgeInsets.zero,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(48),
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.pushNamed(context, StartRidePage.id);
+                        },
+                        child: const Padding(
+                          padding: EdgeInsets.fromLTRB(64, 16, 64, 16),
+                          child: Text(
+                            "Start Ride",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 24,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
               ),
             ),
           ),

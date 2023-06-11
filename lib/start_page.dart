@@ -44,17 +44,31 @@ class _StartPageState extends State<StartPage> {
               ),
             ),
           ),
-          const Positioned(
-              top: 250,
-              child: Text(
-                "SMART HELMET",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 32,
-                    fontWeight: FontWeight.w700),
-              )),
           Positioned(
-            top: 300,
+            bottom: -100,
+            right: -50,
+            child: Container(
+              height: 300,
+              width: 300,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: const Color(0xFF08f4dc).withOpacity(0.35),
+                backgroundBlendMode: BlendMode.srcOver,
+              ),
+            ),
+          ),
+          const Positioned(
+            top: 200,
+            child: Text(
+              "SMART HELMET",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 32,
+                  fontWeight: FontWeight.w700),
+            ),
+          ),
+          Positioned(
+            top: 250,
             child: SvgPicture.asset(
               "svgs/person_cycling.svg",
               height: 300,
@@ -62,8 +76,7 @@ class _StartPageState extends State<StartPage> {
             ),
           ),
           Positioned(
-            top: 610,
-            left: 100,
+            top: 550,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF08f4dc),
@@ -86,19 +99,6 @@ class _StartPageState extends State<StartPage> {
                     fontSize: 30,
                   ),
                 ),
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: -100,
-            right: -50,
-            child: Container(
-              height: 300,
-              width: 300,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: const Color(0xFF08f4dc).withOpacity(0.35),
-                backgroundBlendMode: BlendMode.srcOver,
               ),
             ),
           ),

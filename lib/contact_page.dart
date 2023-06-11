@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_contacts/flutter_contacts.dart';
 import 'package:smart_helmet/welcome.dart';
 
 class ContactScreen extends StatefulWidget {
@@ -90,8 +91,20 @@ class _ContactScreenState extends State<ContactScreen> {
                             borderRadius: BorderRadius.circular(48),
                           ),
                         ),
-                        onPressed: () {
-                          Navigator.pushNamed(context, WelcomePage.id);
+                        onPressed: () async {
+                          // Request contact permission
+                          if (await FlutterContacts.requestPermission()) {
+                            // Get all contacts (fully fetched)
+                            List<Contact> contacts =
+                                await FlutterContacts.getContacts(
+                                    withProperties: true, withPhoto: true);
+
+                            // Get contact with specific ID (fully fetched)
+                            Contact? contact = await FlutterContacts.getContact(
+                                contacts.first.id);
+
+                            print(contacts);
+                          }
                         },
                         child: const Padding(
                           padding: EdgeInsets.fromLTRB(16, 8, 16, 8),

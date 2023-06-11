@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_helmet/home_page.dart';
+import 'package:smart_helmet/start_page.dart';
 import 'package:smart_helmet/welcome.dart';
 
 class MainPage extends StatelessWidget {
@@ -26,7 +27,7 @@ class MainPage extends StatelessWidget {
           } else if (snapshot.hasData) {
             return const HomePage();
           } else {
-            return const WelcomePage();
+            return const StartPage();
           }
         },
       ),
